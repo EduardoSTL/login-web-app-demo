@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {
+    //validar casos en los que se intenta acceder a un resource que no se encuentra y establece un codigo de respuesta HTTP(404)
+
     private final String resourceName;
     private final String fieldName;
     private final Object fieldValue;
