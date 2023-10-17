@@ -1,5 +1,6 @@
 package com.eduardo.loginwebappdemo.model.entities;
 
+import com.eduardo.loginwebappdemo.enums.Authority;
 import com.eduardo.loginwebappdemo.model.AuthProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -14,6 +15,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -28,14 +30,16 @@ public class User implements OAuth2User, UserDetails {
     private Integer id;
 
     @Column(nullable = false)
-    private String nombre;
+    private String name;
 
     @Email
     @Column(nullable = false)
     private String email;
 
+    private String imageUrl;
+
     @Column(nullable = false)
-    private Boolean emailVerificado = false;
+    private Boolean emailVerified = false;
 
     @JsonIgnore
     private String password;
@@ -46,42 +50,42 @@ public class User implements OAuth2User, UserDetails {
 
     private String providerId;
 
-    //agregar relacion de User
+    @Column(name = "grupos")
+    @Enumerated(EnumType.STRING)
+    @ElementCollection(targetClass = Authority.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "usuario_grupos", joinColumns = @JoinColumn(name = "id"), uniqueConstraints = @UniqueConstraint(columnNames = {
+            "id", "grupos" }))
+    private Set<Authority> authorities;
 
     private transient Map<String, Object> attributes;
 
     @Override
-    public String getName() {
-        return null;
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.authorities;
     }
+
     @Override
     public String getUsername() {
         return this.email;
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
+
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
+
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
+
     @Override
     public boolean isEnabled() {
         return true;
     }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    /*@Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.authorities;
-    }*/
 }
