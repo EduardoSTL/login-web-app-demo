@@ -1,6 +1,7 @@
 package com.eduardo.loginwebappdemo.config.security;
 
 import com.eduardo.loginwebappdemo.config.oauth2.handle.OAuth2AuthenticationFailureHandler;
+import com.eduardo.loginwebappdemo.config.oauth2.handle.HttpCookieOAuth2AuthorizationRequestRepository;
 import com.eduardo.loginwebappdemo.config.oauth2.service.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -31,7 +33,7 @@ public class SecurityConfig {
 
     private final CustomOAuth2UserService customOAuth2UserService;
 
-    private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
+    private final HttpCookieOAuth2AuthorizationRequestRepository oAuth2AuthenticationSuccessHandler;
 
     private final OAuth2AuthenticationFailureHandler oAuth2AuthenticationFailureHandler;
 
@@ -48,8 +50,8 @@ public class SecurityConfig {
      * the session. We'll save the request in a Base64 encoded cookie instead.
      */
     @Bean
-    public HttpCookieOAuth2AuthorizationRequestRepository cookieAuthorizationRequestRepository() {
-        return new HttpCookieOAuth2AuthorizationRequestRepository();
+    public com.eduardo.loginwebappdemo.config.oauth2.HttpCookieOAuth2AuthorizationRequestRepository cookieAuthorizationRequestRepository() {
+        return new com.eduardo.loginwebappdemo.config.oauth2.HttpCookieOAuth2AuthorizationRequestRepository();
     }
 
     @Bean
