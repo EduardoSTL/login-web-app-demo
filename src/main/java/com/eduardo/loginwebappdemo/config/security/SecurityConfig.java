@@ -1,7 +1,8 @@
 package com.eduardo.loginwebappdemo.config.security;
 
+import com.eduardo.loginwebappdemo.config.oauth2.HttpCookieOAuth2AuthorizationRequestRepository;
 import com.eduardo.loginwebappdemo.config.oauth2.handle.OAuth2AuthenticationFailureHandler;
-import com.eduardo.loginwebappdemo.config.oauth2.handle.HttpCookieOAuth2AuthorizationRequestRepository;
+import com.eduardo.loginwebappdemo.config.oauth2.handle.OAuth2AuthenticationSuccessHandler;
 import com.eduardo.loginwebappdemo.config.oauth2.service.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -33,7 +34,7 @@ public class SecurityConfig {
 
     private final CustomOAuth2UserService customOAuth2UserService;
 
-    private final HttpCookieOAuth2AuthorizationRequestRepository oAuth2AuthenticationSuccessHandler;
+    private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
 
     private final OAuth2AuthenticationFailureHandler oAuth2AuthenticationFailureHandler;
 
