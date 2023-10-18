@@ -8,5 +8,5 @@ import java.lang.annotation.*;
 @Documented
 @AuthenticationPrincipal
 public @interface CurrentUser {
-
+    //inyectar el usuario autenticado actualmente en el método o controlador de Spring MVC.
 }

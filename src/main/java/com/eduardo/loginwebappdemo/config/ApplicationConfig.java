@@ -20,6 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableConfigurationProperties(value = { RsaKeyProperties.class, TokenProperties.class,
         CorsProperties.class, OauthProperties.class})
 public class ApplicationConfig {
+//clase encargada de encarga de configurar y proporcionar varios beans esenciales para la aplicación, incluidos los relacionados con la autenticación.
     private final UsuarioService usuarioService;
 
     @Bean

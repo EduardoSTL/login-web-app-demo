@@ -31,6 +31,7 @@ import java.util.Set;
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+//maneja las solicitudes relacionadas con la autenticación de usuarios y el registro de nuevos
 
     @Autowired
     private AuthenticationManager authenticationManager;

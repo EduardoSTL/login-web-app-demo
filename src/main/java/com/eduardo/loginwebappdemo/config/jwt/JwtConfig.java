@@ -18,6 +18,9 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 @Configuration
 @RequiredArgsConstructor
 public class JwtConfig {
+
+    //configuración de Spring Boot para manejar la codificación y decodificación
+    //de tokens JWT (JSON Web Tokens) utilizados en el sistema de autenticación OAuth2
     private final RsaKeyProperties rsaKeyProperties;
 
     @Bean

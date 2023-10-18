@@ -14,7 +14,7 @@ import java.time.temporal.ChronoUnit;
 @Service
 @RequiredArgsConstructor
 public class TokenProvider {
-
+//esta clase se encarga de la generación, decodificación y validación de tokens JWT
     private final JwtEncoder jwtEncoder;
     private final JwtDecoder jwtDecoder;
 

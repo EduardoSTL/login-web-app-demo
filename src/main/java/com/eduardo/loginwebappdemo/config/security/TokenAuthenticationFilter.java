@@ -16,6 +16,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
+//filtro de Spring Security que intercepta las solicitudes para realizar la autenticación basada en tokens
+
     @Autowired
     private TokenProvider tokenProvider;
 

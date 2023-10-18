@@ -4,6 +4,8 @@ package com.eduardo.loginwebappdemo.config.oauth2.user;
 import java.util.Map;
 
 public final class FacebookOAuth2UserInfo extends OAuth2UserInfo {
+    //encapsula la información específica del proveedor OAuth2 de Facebook
+
     public FacebookOAuth2UserInfo(Map<String, Object> attributes) {
         super(attributes);
     }

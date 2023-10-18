@@ -13,5 +13,5 @@ public class TokenProperties {
     private Integer expiresHours;
     private String domain;
 
-
+    //esta clase se utiliza para configurar propiedades relacionadas con la gestión de tokens en la aplicación
 }

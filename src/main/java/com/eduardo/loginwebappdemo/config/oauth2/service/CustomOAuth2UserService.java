@@ -23,6 +23,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
+    //gestionar la carga y procesamiento de usuarios OAuth2
     private final UserRepository userRepository;
 
     @Override

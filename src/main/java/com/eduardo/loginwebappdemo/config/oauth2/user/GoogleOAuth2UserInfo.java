@@ -3,7 +3,7 @@ package com.eduardo.loginwebappdemo.config.oauth2.user;
 import java.util.Map;
 
 public final class GoogleOAuth2UserInfo extends OAuth2UserInfo {
-
+    //encapsula la información específica del proveedor OAuth2 de google
     public GoogleOAuth2UserInfo(Map<String, Object> attributes) {
         super(attributes);
     }

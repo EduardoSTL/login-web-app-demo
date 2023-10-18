@@ -25,6 +25,8 @@ import static com.eduardo.loginwebappdemo.config.oauth2.HttpCookieOAuth2Authoriz
 @Component
 @RequiredArgsConstructor
 public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+    //esta clase maneja la redirección después de una autenticación exitosa con OAuth2, asegurándose de que la URL de redirección sea válida
+    //y generando un token que se agrega como un parámetro de consulta en la URL de destino
 
     private final TokenProvider tokenProvider;
 

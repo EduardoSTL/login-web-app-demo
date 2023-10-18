@@ -31,6 +31,7 @@ import java.util.List;
 @EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 @RequiredArgsConstructor
 public class SecurityConfig {
+//configuración de seguridad de Spring que define cómo se deben asegurar los endpoints de la aplicación
 
     private final CustomOAuth2UserService customOAuth2UserService;
 

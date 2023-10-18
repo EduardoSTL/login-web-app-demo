@@ -1,7 +1,5 @@
 package com.eduardo.loginwebappdemo.config.oauth2.user;
 
-import com.eduardo.loginwebappdemo.config.oauth2.user.FacebookOAuth2UserInfo;
-
 import java.util.Map;
 
 public abstract sealed class OAuth2UserInfo permits GoogleOAuth2UserInfo, GithubOAuth2UserInfo, FacebookOAuth2UserInfo {

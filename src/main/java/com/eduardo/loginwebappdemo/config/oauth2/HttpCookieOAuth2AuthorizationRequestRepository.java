@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
-public class HttpCookieOAuth2AuthorizationRequestRepository
-        implements AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
+public class HttpCookieOAuth2AuthorizationRequestRepository implements AuthorizationRequestRepository<OAuth2AuthorizationRequest> {
+//esta clase se utiliza para cargar, guardar y eliminar solicitudes de autorización OAuth2
 
     public static final String OAUTH2_AUTHORIZATION_REQUEST_COOKIE_NAME = "oauth2_auth_request";
 
