@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Web App Demo</title>
+  <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<div id="app" th:object="${loginRequest}">
+  <h1>Login Web App Demo</h1>
+  <div id="login-container">
+    <form th:action="@{/auth/login}" th:object="${loginRequest}" method="post">
+      <input type="email" th:field="*{email}" placeholder="Email">
+      <input type="password" th:field="*{password}" placeholder="Password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+<script th:src="@{/app.js}"></script>
+</body>
+</html>
